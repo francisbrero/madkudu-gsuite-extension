@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Chrome Enhancer with MadKudu scores",
+    "version": "1.1.1",
+    "permissions": [
+      "https://mail.google.com/",
+      "https://www.googleapis.com/",
+      "storage"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*", "https://calendar.google.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": ["sidebar.html", "sidebar.css","options.html"]
+  }
+  
